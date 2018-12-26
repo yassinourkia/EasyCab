@@ -53,7 +53,6 @@ void listrdv::on_list_activated(const QModelIndex &index)
         if(cn->getDb().open())
         {
             query->prepare("select * from rdv where ID_RDV="+val+"");
-
             if(query->exec())
             {
                 qDebug() << "Size :" << query->size();
@@ -71,15 +70,12 @@ void listrdv::on_list_activated(const QModelIndex &index)
 
                 }
             }
-
-
         }
         else
         {
             qDebug()<<"Not opened";
         }
 
-        //qDebug() >> (model->rowCount());
 
     }
     else
