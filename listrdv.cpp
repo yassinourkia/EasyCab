@@ -15,23 +15,17 @@ listrdv::listrdv(QWidget *parent) :
     QSqlQuery* query = new QSqlQuery(db);
     if(cn->isConnected())
     {
-        qDebug() << "Arrived here";
+
         if(cn->getDb().open())
         {
             if(query->exec("select * from rdv")){
-                qDebug() <<"etat :" <<cn->getDb().isOpen();
                 model->setQuery(*query);
                 ui->list->setModel(model);
-
             }
             else
             {
-                qDebug() <<"ça marche pas etat " <<cn->getDb().isOpen();
+                qDebug() <<"Loading issue :  " <<cn->getDb().isOpen();
             }
-        }
-        else
-        {
-            qDebug()<<"Not opened";
         }
     }
 
@@ -49,14 +43,19 @@ void listrdv::on_list_activated(const QModelIndex &index)
     QSqlQuery* query = new QSqlQuery(db);
     if(cn->isConnected())
     {
-        qDebug() << "Arrived here";
         if(cn->getDb().open())
         {
-            query->prepare("select * from rdv where ID_RDV="+val+"");
+
+            query->prepare("select * from state where RDV="+val+"");
             if(query->exec())
             {
-                qDebug() << "Size :" << query->size();
-                if(query->next())
+                int count=0;
+                while(query->next())
+                {
+                    count++;
+                }
+
+                if(count == 1)
                 {
                    StateRdv* w = new StateRdv(val);
                    this->hide();
@@ -67,7 +66,6 @@ void listrdv::on_list_activated(const QModelIndex &index)
                    FormState* w = new FormState();
                    this->hide();
                    w->show();
-
                 }
             }
         }
@@ -75,13 +73,9 @@ void listrdv::on_list_activated(const QModelIndex &index)
         {
             qDebug()<<"Not opened";
         }
-
-
     }
     else
     {
         qDebug() << "doesn't Arrived here";
     }
-
-
 }

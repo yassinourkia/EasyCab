@@ -7,17 +7,7 @@ Connect::Connect()
 }
 bool Connect::isConnected()
 {
-
-     if(db.open())
-     {
-          qDebug()<< "connected" ;;
-          return true;
-     }
-     else
-     {
-          qDebug() << "failed to connect to database";
-          return false;
-     }
+   return db.open();
 }
 
 QSqlDatabase Connect::getDb(){
