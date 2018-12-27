@@ -6,6 +6,8 @@ listpatient::listpatient(QString user) :
     ui(new Ui::listpatient)
 {
     ui->setupUi(this);
+    this->setFixedHeight(600);
+    this->setFixedWidth(600);
     ui->label->setText(user);
     cn = new Connect();
     QSqlDatabase db = cn->getDb();

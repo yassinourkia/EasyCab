@@ -11,14 +11,14 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-     //LOGIN w;
+     LOGIN w;
     //FormPatient w;
     //listpatient w;
     //PatientManagement w;
     //RdvForm w;
     //listrdv w;
     //FormState w;
-    SecretaryInterface w;
+    //SecretaryInterface w;
     w.show();
 
     return a.exec();

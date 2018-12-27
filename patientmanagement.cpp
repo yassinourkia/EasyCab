@@ -3,13 +3,16 @@
 #include "connect.h"
 #include "patient.h"
 #include "formpatient.h"
+#include "secretaryinterface.h"
 #include <QFileDialog>
 #include <QMessageBox>
 PatientManagement::PatientManagement(QWidget *parent,QString add_by) :
     QWidget(parent),
     ui(new Ui::PatientManagement)
 {
+
     ui->setupUi(this);
+    this->setFixedSize(QSize(874,495));
     ui->added_by->setText("Utilisateur :"+add_by);
     cn = new Connect();
     QSqlDatabase db = cn->getDb();
@@ -47,6 +50,7 @@ PatientManagement::PatientManagement(QWidget *parent,QString add_by) :
 
 PatientManagement::~PatientManagement()
 {
+
     delete ui;
 }
 

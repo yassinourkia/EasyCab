@@ -4,12 +4,14 @@
 #include <QtSql>
 #include <iostream>
 #include "connect.h"
-#include "patientmanagement.h"
+#include "secretaryinterface.h"
 LOGIN::LOGIN(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::LOGIN)
 {
     ui->setupUi(this);
+    this->setFixedHeight(600);
+    this->setFixedWidth(600);
     cn = new Connect();
 
 }
@@ -43,7 +45,7 @@ void LOGIN::on_pushButton_clicked()
          {
              qDebug()  <<"bienvenu : "+user;
              cn->~Connect();
-             PatientManagement *w = new PatientManagement(nullptr,user);
+             SecretaryInterface *w = new SecretaryInterface(user);
              w->show();
              this->hide();
 

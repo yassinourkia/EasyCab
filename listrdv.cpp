@@ -3,6 +3,7 @@
 #include "rdvform.h"
 #include "staterdv.h"
 #include "formstate.h"
+#include "secretaryinterface.h"
 
 listrdv::listrdv(QWidget *parent) :
     QWidget(parent),
@@ -59,6 +60,7 @@ listrdv::listrdv(QString date) :
 
 listrdv::~listrdv()
 {
+
     delete ui;
 }
 

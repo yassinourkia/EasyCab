@@ -1,17 +1,20 @@
 #include "formstate.h"
 #include "ui_formstate.h"
-
+#include "secretaryinterface.h"
 FormState::FormState(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FormState)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(700,467));
     cn = new Connect();
 }
 
 FormState::~FormState()
 {
+
     delete ui;
+
 }
 
 void FormState::on_add_clicked()
