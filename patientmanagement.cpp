@@ -216,7 +216,7 @@ void PatientManagement::on_delete_2_clicked()
                                ui->telephone->setText("");
                                ui->allergies->setText("");
                              ui->autres->setText("");
-                               fileName;
+                               //fileName;
 
                           }
                           else

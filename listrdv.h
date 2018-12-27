@@ -14,6 +14,7 @@ class listrdv : public QWidget
 
 public:
     explicit listrdv(QWidget *parent = nullptr);
+    explicit listrdv(QString date = nullptr);
     ~listrdv();
 
 private slots:

@@ -40,7 +40,8 @@ SOURCES += \
     formstate.cpp \
     state.cpp \
     staterdv.cpp \
-    secretaire.cpp
+    secretaire.cpp \
+    secretaryinterface.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -57,7 +58,8 @@ HEADERS += \
     formstate.h \
     state.h \
     staterdv.h \
-    secretaire.h
+    secretaire.h \
+    secretaryinterface.h
 
 FORMS += \
         mainwindow.ui \
@@ -67,7 +69,8 @@ FORMS += \
     rdvform.ui \
     listrdv.ui \
     formstate.ui \
-    staterdv.ui
+    staterdv.ui \
+    secretaryinterface.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

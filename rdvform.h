@@ -8,6 +8,7 @@
 #include "rdv.h"
 #include "patient.h"
 #include "listrdv.h"
+#include "patient.h"
 namespace Ui {
 class RdvForm;
 }
@@ -26,6 +27,8 @@ private slots:
     void on_charge_clicked();
 
     void on_add_clicked();
+
+    void on_date_clicked(const QDate &date);
 
 private:
     Ui::RdvForm *ui;

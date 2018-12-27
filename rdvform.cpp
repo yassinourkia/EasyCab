@@ -1,7 +1,7 @@
 #include "rdvform.h"
 #include "ui_rdvform.h"
 #include <QMessageBox>
-#include "patient.h"
+
 RdvForm::RdvForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::RdvForm)
@@ -106,7 +106,7 @@ void RdvForm::on_add_clicked()
 {
     QString date,patient_name,doc,description;
 
-    date = ui->date->selectedDate().toString("dd/MM/yy");
+    date = ui->date->selectedDate().toString("yyyy-MM-dd");
     patient_name = ui->NomPatient->property("currentText").toString();
     Utilisateur createdby = Utilisateur("Manal","Bekaoui","Zaio","09090");
     description = ui->desc->toPlainText();
@@ -126,7 +126,7 @@ void RdvForm::on_add_clicked()
          if(rdv.addRDV())
          {
             qDebug() << "Succés d'ajout de rdv";
-            listrdv* w = new listrdv() ;
+            listrdv *w = new listrdv(nullptr);
             w->show();
             this->hide();
 
@@ -140,4 +140,14 @@ void RdvForm::on_add_clicked()
              //view.show();
          }
      }
+}
+
+void RdvForm::on_date_clicked(const QDate &date)
+{
+    qDebug() << date;
+    cn->~Connect();
+    listrdv* w = new listrdv(date.toString());
+    w->show();
+    this->hide();
+
 }

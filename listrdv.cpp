@@ -31,6 +31,32 @@ listrdv::listrdv(QWidget *parent) :
 
 }
 
+listrdv::listrdv(QString date) :
+    ui(new Ui::listrdv)
+{
+    ui->setupUi(this);
+    cn = new Connect();
+    QSqlDatabase db = cn->getDb();
+    QSqlQueryModel * model = new QSqlQueryModel();
+    QSqlQuery* query = new QSqlQuery(db);
+    if(cn->isConnected())
+    {
+
+        if(cn->getDb().open())
+        {
+            if(query->exec("select * from rdv where DATE='"+date+"'")){
+                model->setQuery(*query);
+                ui->list->setModel(model);
+            }
+            else
+            {
+                qDebug() <<"Loading issue :  " <<cn->getDb().isOpen();
+            }
+        }
+    }
+
+}
+
 listrdv::~listrdv()
 {
     delete ui;
