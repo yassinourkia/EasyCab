@@ -43,7 +43,7 @@ void LOGIN::on_pushButton_clicked()
          }
          if(count == 1)
          {
-             qDebug()  <<"bienvenu : "+user;
+
              cn->~Connect();
              SecretaryInterface *w = new SecretaryInterface(user);
              w->show();

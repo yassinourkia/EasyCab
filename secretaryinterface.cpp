@@ -6,13 +6,18 @@ SecretaryInterface::SecretaryInterface(QString user) :
     ui(new Ui::SecretaryInterface)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(698,459));
-    ui->label->setText("Bonjour : "+user);
-    QIcon patienticon ("/Users/ourkia/Desktop/Patient.png");
-    QIcon rdvicon ("/Users/ourkia/Desktop/rdv.png");
-    QIcon stateicon ("/Users/ourkia/Desktop/state.png");
-    QSize size (220,240);
 
+    ui->label->setText("Bonjour : ");
+    ui->user->setText(user);
+    QString date = QDate::currentDate().toString("dd/MM/yyyy");
+    ui->date->setText(date);
+
+
+    QIcon patienticon ("/Users/ourkia/Desktop/easycab/Patient.png");
+    QIcon rdvicon ("/Users/ourkia/Desktop/easycab/rdv.png");
+    QIcon stateicon ("/Users/ourkia/Desktop/easycab/state.png");
+
+    QSize size (220,240);
     ui->Patients->setIconSize(size);
     ui->Rdvs->setIconSize(size);
     ui->States->setIconSize(size);
