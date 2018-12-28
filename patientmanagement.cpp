@@ -12,7 +12,21 @@ PatientManagement::PatientManagement(QWidget *parent,QString add_by) :
 {
 
     ui->setupUi(this);
-    this->setFixedSize(QSize(874,495));
+    this->setFixedSize(QSize(944,605));
+
+    QIcon icon (":/images/Home.png");
+    QIcon add (":/images/add.png");
+    QIcon del (":/images/delete.png");
+    QIcon update (":/images/update.png");
+
+    QSize size (100,70);
+
+    ui->dashboard->setIconSize(size);
+    ui->dashboard->setIcon(icon);
+    ui->add->setIcon(add);
+    ui->pushButton->setIcon(update);
+    ui->delete_2->setIcon(del);
+
     ui->added_by->setText("Utilisateur :"+add_by);
     cn = new Connect();
     QSqlDatabase db = cn->getDb();
@@ -284,3 +298,10 @@ void PatientManagement::on_add_clicked()
     this->hide();
 }
 
+
+void PatientManagement::on_dashboard_clicked()
+{
+    SecretaryInterface *w = new SecretaryInterface("Manal");
+    w->show();
+    this->hide();
+}

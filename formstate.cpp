@@ -8,7 +8,7 @@ FormState::FormState(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(QSize(700,467));
     cn = new Connect();
-    QIcon icon ("/Users/ourkia/Desktop/easycab/Home.png");
+    QIcon icon (":/images/Home.png");
     QSize size (71,51);
     ui->dashboard->setIconSize(size);
     ui->dashboard->setIcon(icon);
@@ -68,7 +68,7 @@ void FormState::on_add_clicked()
 void FormState::on_dashboard_clicked()
 {
 
-    SecretaryInterface *w = new SecretaryInterface("user");
+    SecretaryInterface *w = new SecretaryInterface("Manal");
     w->show();
     this->hide();
 }

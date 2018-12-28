@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Patient.png</file>
+        <file>rdv.png</file>
+        <file>state.png</file>
+        <file>easycab.png</file>
+        <file>Home.png</file>
+        <file>add.png</file>
+        <file>delete.png</file>
+        <file>update.png</file>
+    </qresource>
+    <qresource prefix="/database">
+        <file>database.db</file>
+    </qresource>
+</RCC>

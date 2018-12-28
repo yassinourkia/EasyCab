@@ -11,6 +11,11 @@ LOGIN::LOGIN(QWidget *parent) :
 {
     ui->setupUi(this);
     cn = new Connect();
+    QIcon icon (":/images/easycab.png");
+    QSize size (100,70);
+
+    ui->EasyCab->setIconSize(size);
+    ui->EasyCab->setIcon(icon);
 
 }
 

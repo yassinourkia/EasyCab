@@ -28,6 +28,8 @@ private slots:
 
 
 
+    void on_dashboard_clicked();
+
 private:
     Ui::PatientManagement *ui;
     Connect *cn;

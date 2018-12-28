@@ -13,9 +13,9 @@ SecretaryInterface::SecretaryInterface(QString user) :
     ui->date->setText(date);
 
 
-    QIcon patienticon ("/Users/ourkia/Desktop/easycab/Patient.png");
-    QIcon rdvicon ("/Users/ourkia/Desktop/easycab/rdv.png");
-    QIcon stateicon ("/Users/ourkia/Desktop/easycab/state.png");
+    QIcon patienticon (":/images/Patient.png");
+    QIcon rdvicon (":/images/rdv.png");
+    QIcon stateicon (":/images/state.png");
 
     QSize size (220,240);
     ui->Patients->setIconSize(size);
