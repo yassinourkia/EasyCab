@@ -10,8 +10,6 @@ LOGIN::LOGIN(QWidget *parent) :
     ui(new Ui::LOGIN)
 {
     ui->setupUi(this);
-    this->setFixedHeight(600);
-    this->setFixedWidth(600);
     cn = new Connect();
 
 }

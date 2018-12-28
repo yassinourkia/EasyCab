@@ -6,7 +6,7 @@ SecretaryInterface::SecretaryInterface(QString user) :
     ui(new Ui::SecretaryInterface)
 {
     ui->setupUi(this);
-
+    this->setFixedSize(QSize(698,459));
     ui->label->setText("Bonjour : ");
     ui->user->setText(user);
     QString date = QDate::currentDate().toString("dd/MM/yyyy");

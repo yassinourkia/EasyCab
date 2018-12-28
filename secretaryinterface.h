@@ -25,6 +25,7 @@ private slots:
 
     void on_Rdvs_clicked();
 
+
 private:
     Ui::SecretaryInterface *ui;
 };

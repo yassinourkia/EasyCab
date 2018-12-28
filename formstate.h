@@ -21,6 +21,9 @@ public:
 private slots:
     void on_add_clicked();
 
+
+    void on_dashboard_clicked();
+
 private:
     Ui::FormState *ui;
     Connect *cn;

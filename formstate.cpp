@@ -8,6 +8,10 @@ FormState::FormState(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(QSize(700,467));
     cn = new Connect();
+    QIcon icon ("/Users/ourkia/Desktop/easycab/Home.png");
+    QSize size (71,51);
+    ui->dashboard->setIconSize(size);
+    ui->dashboard->setIcon(icon);
 }
 
 FormState::~FormState()
@@ -58,4 +62,13 @@ void FormState::on_add_clicked()
              //view.show();
          }
      }
+}
+
+
+void FormState::on_dashboard_clicked()
+{
+
+    SecretaryInterface *w = new SecretaryInterface("user");
+    w->show();
+    this->hide();
 }
