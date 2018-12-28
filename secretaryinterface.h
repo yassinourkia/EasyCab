@@ -2,7 +2,7 @@
 #define SECRETARYINTERFACE_H
 #include "listrdv.h"
 #include "patientmanagement.h"
-#include "formstate.h"
+#include "rdvform.h"
 #include <QWidget>
 
 namespace Ui {

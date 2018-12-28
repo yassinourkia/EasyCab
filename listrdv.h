@@ -20,6 +20,8 @@ public:
 private slots:
     void on_list_activated(const QModelIndex &index);
 
+    void on_dashboard_clicked();
+
 private:
     Ui::listrdv *ui;
     Connect *cn;

@@ -43,7 +43,7 @@ void SecretaryInterface::on_Patients_clicked()
 
 void SecretaryInterface::on_States_clicked()
 {
-    FormState *w = new FormState();
+    RdvForm *w = new RdvForm();
     w->show();
     this->hide();
 

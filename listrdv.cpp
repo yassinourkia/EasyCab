@@ -11,6 +11,10 @@ listrdv::listrdv(QWidget *parent) :
 {
     ui->setupUi(this);
     cn = new Connect();
+    QIcon icon (":/images/Home.png");
+    QSize size (71,51);
+    ui->dashboard->setIconSize(size);
+    ui->dashboard->setIcon(icon);
     QSqlDatabase db = cn->getDb();
     QSqlQueryModel * model = new QSqlQueryModel();
     QSqlQuery* query = new QSqlQuery(db);
@@ -106,4 +110,11 @@ void listrdv::on_list_activated(const QModelIndex &index)
     {
         qDebug() << "doesn't Arrived here";
     }
+}
+
+void listrdv::on_dashboard_clicked()
+{
+    SecretaryInterface *w = new SecretaryInterface("Manal");
+    w->show();
+    this->hide();
 }

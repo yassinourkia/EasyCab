@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>676</width>
-    <height>361</height>
+    <width>766</width>
+    <height>501</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,11 +16,24 @@
   <widget class="QTableView" name="list">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>20</y>
+     <x>30</x>
+     <y>140</y>
      <width>621</width>
      <height>331</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="dashboard">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>81</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

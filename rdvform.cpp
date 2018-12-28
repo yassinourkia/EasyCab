@@ -144,10 +144,13 @@ void RdvForm::on_add_clicked()
 
 void RdvForm::on_date_clicked(const QDate &date)
 {
+    /*
     qDebug() << date;
     cn->~Connect();
     listrdv* w = new listrdv(date.toString());
     w->show();
     this->hide();
+    */
 
 }
+
