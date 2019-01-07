@@ -1,7 +1,10 @@
 #ifndef UTILISATEUR_H
 #define UTILISATEUR_H
 #include <QString>
-
+/*!
+ * \brief The Utilisateur class
+ * \authors MANAL BEKAOUI - OURKIA YASSIN
+ */
 class Utilisateur
 {
 

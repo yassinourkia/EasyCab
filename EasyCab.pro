@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core sql gui
+QT       += core sql gui printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,13 +26,10 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
     login.cpp \
     connect.cpp \
     utilisateur.cpp \
     patient.cpp \
-    formpatient.cpp \
-    listpatient.cpp \
     patientmanagement.cpp \
     rdvform.cpp \
     rdv.cpp \
@@ -41,16 +38,19 @@ SOURCES += \
     state.cpp \
     staterdv.cpp \
     secretaire.cpp \
-    secretaryinterface.cpp
+    secretaryinterface.cpp \
+    doctordashboard.cpp \
+    medecin.cpp \
+    logindoctor.cpp \
+    listpatients.cpp \
+    accueil.cpp \
+    listrdvsec.cpp
 
 HEADERS += \
-        mainwindow.h \
     login.h \
     connect.h \
     utilisateur.h \
     patient.h \
-    formpatient.h \
-    listpatient.h \
     patientmanagement.h \
     rdvform.h \
     rdv.h \
@@ -59,18 +59,27 @@ HEADERS += \
     state.h \
     staterdv.h \
     secretaire.h \
-    secretaryinterface.h
+    secretaryinterface.h \
+    doctordashboard.h \
+    medecin.h \
+    logindoctor.h \
+    listpatients.h \
+    accueil.h \
+    listrdvsec.h
 
 FORMS += \
-        mainwindow.ui \
     login.ui \
-    formpatient.ui \
     patientmanagement.ui \
     rdvform.ui \
     listrdv.ui \
     formstate.ui \
     staterdv.ui \
-    secretaryinterface.ui
+    secretaryinterface.ui \
+    doctordashboard.ui \
+    logindoctor.ui \
+    listpatients.ui \
+    accueil.ui \
+    listrdvsec.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -1,43 +1,50 @@
 #include "rdvform.h"
 #include "ui_rdvform.h"
+#include "secretaryinterface.h"
 #include <QMessageBox>
+#include "listrdvsec.h"
 
-RdvForm::RdvForm(QWidget *parent) :
+RdvForm::RdvForm(QWidget *parent,QString user) :
     QWidget(parent),
     ui(new Ui::RdvForm)
 {
     ui->setupUi(this);
+    this->user = user;
+    this->setFixedSize(733,468);
+    QIcon icon (":/images/Home.png");
+    QSize size (71,51);
+    ui->dashboard->setIconSize(size);
+    ui->dashboard->setIcon(icon);
+    ui->label->setText(user);
+    this->setWindowTitle("Rendez-vous");
     cn = new Connect();
     QSqlDatabase db = cn->getDb();
     QSqlQueryModel * model = new QSqlQueryModel();
     QSqlQuery* query = new QSqlQuery(db);
-    if(cn->isConnected())
-    {
-        qDebug() << "Arrived here";
-        if(cn->getDb().open())
+    try {
+        if(cn->isConnected())
         {
-            if(query->exec("select F_NAME from patient")){
-                qDebug() <<"etat :" <<cn->getDb().isOpen();
-                model->setQuery(*query);
-                ui->NomPatient->setModel(model);
-
-            }
-            else
+            if(cn->getDb().open())
             {
-                qDebug() <<"ça marche pas etat " <<cn->getDb().isOpen();
+                if(query->exec("select F_NAME from patient"))
+                {
+
+                    model->setQuery(*query);
+                    ui->NomPatient->setModel(model);
+
+                }
+                else
+                {
+                    throw QString("Echec d'execution de la requête");
+                }
             }
         }
         else
         {
-            qDebug()<<"Not opened";
+            throw QString("Echec de connexion à la base de donnée");
         }
-
-        //qDebug() >> (model->rowCount());
-
-    }
-    else
-    {
-        qDebug() << "doesn't Arrived here";
+    }catch(QString const& chaine) {
+        qDebug() << "Exception déclenché :" + chaine ;
     }
 
 }
@@ -119,38 +126,27 @@ void RdvForm::on_add_clicked()
 
      if(!cn->isConnected())
      {
-         qDebug() << "echec d'ouverture de base de donnée";
-         //return;
+
      }
      else {
          if(rdv.addRDV())
          {
-            qDebug() << "Succés d'ajout de rdv";
-            listrdv *w = new listrdv(nullptr);
+            QMessageBox::critical(this,"Information","Vous avez bien ajouté le rendez-vous pour la date de <strong>"+date+"</strong>");
+
+            ListRdvSec *w = new ListRdvSec(nullptr,this->user);
             w->show();
             this->hide();
 
 
-
-         }
-         else
-         {
-             qDebug() << "Echec d'ajout";
-             //this->cn->~Connect();
-             //view.show();
          }
      }
 }
 
-void RdvForm::on_date_clicked(const QDate &date)
+
+
+void RdvForm::on_dashboard_clicked()
 {
-    /*
-    qDebug() << date;
-    cn->~Connect();
-    listrdv* w = new listrdv(date.toString());
+    SecretaryInterface *w = new SecretaryInterface(this->user);
     w->show();
     this->hide();
-    */
-
 }
-

@@ -6,18 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>642</width>
-    <height>399</height>
+    <width>733</width>
+    <height>468</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Choisir un rendez-vous</string>
   </property>
   <widget class="QComboBox" name="NomPatient">
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>10</y>
+     <y>80</y>
      <width>91</width>
      <height>32</height>
     </rect>
@@ -27,7 +27,7 @@
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>40</y>
+     <y>110</y>
      <width>304</width>
      <height>173</height>
     </rect>
@@ -40,20 +40,29 @@
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>10</y>
-     <width>59</width>
+     <y>80</y>
+     <width>71</width>
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 255);</string>
+   </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#0000ff;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="add">
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>350</y>
+     <y>420</y>
      <width>114</width>
      <height>32</height>
     </rect>
@@ -66,7 +75,7 @@
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>220</y>
+     <y>290</y>
      <width>301</width>
      <height>74</height>
     </rect>
@@ -76,7 +85,7 @@
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>310</y>
+     <y>380</y>
      <width>171</width>
      <height>32</height>
     </rect>
@@ -101,7 +110,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>20</y>
+     <y>90</y>
      <width>59</width>
      <height>16</height>
     </rect>
@@ -114,7 +123,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>50</y>
+     <y>120</y>
      <width>59</width>
      <height>16</height>
     </rect>
@@ -127,7 +136,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>220</y>
+     <y>290</y>
      <width>71</width>
      <height>16</height>
     </rect>
@@ -140,13 +149,42 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>310</y>
+     <y>380</y>
      <width>71</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
     <string>Documents</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>80</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Utilisateur :</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="dashboard">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>114</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:0px;</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

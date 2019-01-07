@@ -1,0 +1,266 @@
+\hypertarget{class_patient}{}\section{Patient Class Reference}
+\label{class_patient}\index{Patient@{Patient}}
+
+
+The \mbox{\hyperlink{class_patient}{Patient}} class to implement all patient methods herited from user class.  
+
+
+
+
+{\ttfamily \#include $<$patient.\+h$>$}
+
+Inheritance diagram for Patient\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_patient}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_patient_af34d7593aee6534e995703883265583c}\label{class_patient_af34d7593aee6534e995703883265583c}} 
+\mbox{\hyperlink{class_patient_af34d7593aee6534e995703883265583c}{Patient}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_patient}{Patient}} Constructors of the class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_patient_af4a9269bfc0345a5957ece97c1ada9a8}\label{class_patient_af4a9269bfc0345a5957ece97c1ada9a8}} 
+{\bfseries Patient} (Q\+String f\+\_\+name, Q\+String l\+\_\+name, Q\+String adresse, Q\+String phone\+\_\+number, Q\+String allergy, Q\+String other, Q\+String doc, \mbox{\hyperlink{class_utilisateur}{Utilisateur}})
+\item 
+Q\+String \mbox{\hyperlink{class_patient_a819426aede04a6a89b17ea705757cd29}{get\+Other}} () const
+\begin{DoxyCompactList}\small\item\em get\+Other function to get the other field \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_patient_a0ece648106c80c8df117804f24422676}{set\+Other}} (const Q\+String \&value)
+\begin{DoxyCompactList}\small\item\em set\+Other function set the other value with the input value \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_utilisateur}{Utilisateur}} \mbox{\hyperlink{class_patient_a2f17f0abc280c2c3854afbd73f98676b}{get\+Createdby}} () const
+\begin{DoxyCompactList}\small\item\em get\+Createdby function to get the created by field \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_patient_ac61823b7a151a384d9b4c06a11013076}{set\+Createdby}} (const \mbox{\hyperlink{class_utilisateur}{Utilisateur}} \&value)
+\begin{DoxyCompactList}\small\item\em set\+Createdby function set the createdby value with the input value \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_patient_a8b74db0ad3cc5ea785a31cedc7eb5a42}{get\+Doc}} () const
+\begin{DoxyCompactList}\small\item\em get\+Doc function to get the Doc field \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_patient_a4682d8a78adadf1edf65dd12b0ca268c}{set\+Doc}} (const Q\+String \&value)
+\begin{DoxyCompactList}\small\item\em set\+Doc function set the Doc value with the input value \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_patient_a5f451d3a87a379f8cef6fe844e0c3598}{get\+Allergy}} () const
+\begin{DoxyCompactList}\small\item\em get\+Allergy function to get the allergy field \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_patient_a61743a052c51abe19ae75f5945fa98b1}{set\+Allergy}} (const Q\+String \&value)
+\begin{DoxyCompactList}\small\item\em set\+Allergy function set the Allergy value with the input value \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_patient_ae6aa7dee3e8d59eaaad1c289f295ee51}{add\+Patient}} ()
+\begin{DoxyCompactList}\small\item\em add\+Patient the function to add a patient to database \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_patient_a39280c0d0686de60cedd2fddc8dfb229}{delete\+Patient}} (Q\+String id)
+\begin{DoxyCompactList}\small\item\em delete\+Patient the function to delete a patient from a database \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_patient_a3ff3a7a688fbaa3d0b260eb0f08c8180}{update\+Patient}} (Q\+String id)
+\begin{DoxyCompactList}\small\item\em update\+Patient the function to update a patient in database using an id as input \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_patient}{Patient}} \mbox{\hyperlink{class_patient_aa6017acec4a2b7d3257912f22cc12753}{get\+Patient}} (Q\+String f\+\_\+name)
+\begin{DoxyCompactList}\small\item\em get\+Patient function to get a \mbox{\hyperlink{class_patient}{Patient}} Object with his first name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_patient}{Patient}} $\ast$ \mbox{\hyperlink{class_patient_a92b5c595605e0f679cff9c4f286c183b}{get\+Patient\+By\+Id}} (Q\+String id)
+\begin{DoxyCompactList}\small\item\em get\+Patient function to get a \mbox{\hyperlink{class_patient}{Patient}} Object with his ID \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_patient}{Patient}} class to implement all patient methods herited from user class. 
+
+\begin{DoxyAuthor}{Authors}
+M\+A\+N\+AL B\+E\+K\+A\+O\+UI -\/ O\+U\+R\+K\+IA Y\+A\+S\+S\+IN 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_patient_ae6aa7dee3e8d59eaaad1c289f295ee51}\label{class_patient_ae6aa7dee3e8d59eaaad1c289f295ee51}} 
+\index{Patient@{Patient}!addPatient@{addPatient}}
+\index{addPatient@{addPatient}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{addPatient()}{addPatient()}}
+{\footnotesize\ttfamily bool Patient\+::add\+Patient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+add\+Patient the function to add a patient to database 
+
+\begin{DoxyReturn}{Returns}
+true if the addition is done successfully 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_patient_a39280c0d0686de60cedd2fddc8dfb229}\label{class_patient_a39280c0d0686de60cedd2fddc8dfb229}} 
+\index{Patient@{Patient}!deletePatient@{deletePatient}}
+\index{deletePatient@{deletePatient}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{deletePatient()}{deletePatient()}}
+{\footnotesize\ttfamily bool Patient\+::delete\+Patient (\begin{DoxyParamCaption}\item[{Q\+String}]{id }\end{DoxyParamCaption})}
+
+
+
+delete\+Patient the function to delete a patient from a database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of patient to be deleted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the delete is done successfully 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_patient_a5f451d3a87a379f8cef6fe844e0c3598}\label{class_patient_a5f451d3a87a379f8cef6fe844e0c3598}} 
+\index{Patient@{Patient}!getAllergy@{getAllergy}}
+\index{getAllergy@{getAllergy}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{getAllergy()}{getAllergy()}}
+{\footnotesize\ttfamily Q\+String Patient\+::get\+Allergy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Allergy function to get the allergy field 
+
+\begin{DoxyReturn}{Returns}
+the value of allergy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_patient_a2f17f0abc280c2c3854afbd73f98676b}\label{class_patient_a2f17f0abc280c2c3854afbd73f98676b}} 
+\index{Patient@{Patient}!getCreatedby@{getCreatedby}}
+\index{getCreatedby@{getCreatedby}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{getCreatedby()}{getCreatedby()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_utilisateur}{Utilisateur}} Patient\+::get\+Createdby (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Createdby function to get the created by field 
+
+\begin{DoxyReturn}{Returns}
+the value of created by 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_patient_a8b74db0ad3cc5ea785a31cedc7eb5a42}\label{class_patient_a8b74db0ad3cc5ea785a31cedc7eb5a42}} 
+\index{Patient@{Patient}!getDoc@{getDoc}}
+\index{getDoc@{getDoc}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{getDoc()}{getDoc()}}
+{\footnotesize\ttfamily Q\+String Patient\+::get\+Doc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Doc function to get the Doc field 
+
+\begin{DoxyReturn}{Returns}
+the value of Doc 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_patient_a819426aede04a6a89b17ea705757cd29}\label{class_patient_a819426aede04a6a89b17ea705757cd29}} 
+\index{Patient@{Patient}!getOther@{getOther}}
+\index{getOther@{getOther}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{getOther()}{getOther()}}
+{\footnotesize\ttfamily Q\+String Patient\+::get\+Other (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Other function to get the other field 
+
+\begin{DoxyReturn}{Returns}
+the value of other field 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_patient_aa6017acec4a2b7d3257912f22cc12753}\label{class_patient_aa6017acec4a2b7d3257912f22cc12753}} 
+\index{Patient@{Patient}!getPatient@{getPatient}}
+\index{getPatient@{getPatient}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{getPatient()}{getPatient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_patient}{Patient}} Patient\+::get\+Patient (\begin{DoxyParamCaption}\item[{Q\+String}]{f\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+get\+Patient function to get a \mbox{\hyperlink{class_patient}{Patient}} Object with his first name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+\_\+name} & the first name of the patient \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_patient}{Patient}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_patient_a92b5c595605e0f679cff9c4f286c183b}\label{class_patient_a92b5c595605e0f679cff9c4f286c183b}} 
+\index{Patient@{Patient}!getPatientById@{getPatientById}}
+\index{getPatientById@{getPatientById}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{getPatientById()}{getPatientById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_patient}{Patient}} $\ast$ Patient\+::get\+Patient\+By\+Id (\begin{DoxyParamCaption}\item[{Q\+String}]{id }\end{DoxyParamCaption})}
+
+
+
+get\+Patient function to get a \mbox{\hyperlink{class_patient}{Patient}} Object with his ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & of the patient \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_patient}{Patient}} Object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_patient_a61743a052c51abe19ae75f5945fa98b1}\label{class_patient_a61743a052c51abe19ae75f5945fa98b1}} 
+\index{Patient@{Patient}!setAllergy@{setAllergy}}
+\index{setAllergy@{setAllergy}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{setAllergy()}{setAllergy()}}
+{\footnotesize\ttfamily void Patient\+::set\+Allergy (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Allergy function set the Allergy value with the input value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_patient_ac61823b7a151a384d9b4c06a11013076}\label{class_patient_ac61823b7a151a384d9b4c06a11013076}} 
+\index{Patient@{Patient}!setCreatedby@{setCreatedby}}
+\index{setCreatedby@{setCreatedby}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{setCreatedby()}{setCreatedby()}}
+{\footnotesize\ttfamily void Patient\+::set\+Createdby (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_utilisateur}{Utilisateur}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Createdby function set the createdby value with the input value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_patient_a4682d8a78adadf1edf65dd12b0ca268c}\label{class_patient_a4682d8a78adadf1edf65dd12b0ca268c}} 
+\index{Patient@{Patient}!setDoc@{setDoc}}
+\index{setDoc@{setDoc}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{setDoc()}{setDoc()}}
+{\footnotesize\ttfamily void Patient\+::set\+Doc (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Doc function set the Doc value with the input value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_patient_a0ece648106c80c8df117804f24422676}\label{class_patient_a0ece648106c80c8df117804f24422676}} 
+\index{Patient@{Patient}!setOther@{setOther}}
+\index{setOther@{setOther}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{setOther()}{setOther()}}
+{\footnotesize\ttfamily void Patient\+::set\+Other (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Other function set the other value with the input value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_patient_a3ff3a7a688fbaa3d0b260eb0f08c8180}\label{class_patient_a3ff3a7a688fbaa3d0b260eb0f08c8180}} 
+\index{Patient@{Patient}!updatePatient@{updatePatient}}
+\index{updatePatient@{updatePatient}!Patient@{Patient}}
+\subsubsection{\texorpdfstring{updatePatient()}{updatePatient()}}
+{\footnotesize\ttfamily bool Patient\+::update\+Patient (\begin{DoxyParamCaption}\item[{Q\+String}]{id }\end{DoxyParamCaption})}
+
+
+
+update\+Patient the function to update a patient in database using an id as input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the patient to be updated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the update is done successfully 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+patient.\+h\item 
+patient.\+cpp\end{DoxyCompactItemize}

@@ -8,7 +8,10 @@
 namespace Ui {
 class SecretaryInterface;
 }
-
+/*!
+ * \brief The SecretaryInterface class
+ * \authors MANAL BEKAOUI - OURKIA YASSIN
+ */
 class SecretaryInterface : public QWidget
 {
     Q_OBJECT
@@ -21,13 +24,14 @@ public:
 private slots:
     void on_Patients_clicked();
 
-    void on_States_clicked();
-
     void on_Rdvs_clicked();
 
 
+    void on_logout_clicked();
+
 private:
     Ui::SecretaryInterface *ui;
+    QString user;
 };
 
 #endif // SECRETARYINTERFACE_H

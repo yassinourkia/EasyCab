@@ -1,4 +1,5 @@
 #include "patient.h"
+#include "utilisateur.h"
 #include <QtSql>
 Patient::Patient()
 {
@@ -6,7 +7,7 @@ Patient::Patient()
 }
 
 Patient::Patient(QString f_name,QString l_name,QString adresse,QString phone_number,
-                 QString allergy,QString other,QString doc,Utilisateur createdby)
+                 QString allergy,QString other,QString doc,Utilisateur createdby )
 : Utilisateur(f_name,l_name,adresse,phone_number)
 {
     this->allergy =allergy;
@@ -84,6 +85,28 @@ bool Patient::deletePatient(QString id)
 {
     QSqlQuery query ;
     return query.exec("DELETE from 'patient' where id_patient ='"+id+"'");
+}
+Patient* Patient::getPatientById(QString id)
+{
+    QSqlQuery query ;
+    QString f_name,l_name, adresse, phone_number,
+                      allergy, other, doc;
+    Utilisateur createdby("Manal","Bekaoui","Zaio","09090");
+    if(query.exec("select * from 'patient' where ID_PATIENT ="+ id+""))
+    {
+         while (query.next())
+         {
+             f_name = query.value(1).toString();
+             l_name = query.value(2).toString();
+             adresse= query.value(3).toString();
+             phone_number = query.value(4).toString();
+             allergy = query.value(5).toString();;
+             other = query.value(6).toString();
+             doc = query.value(7).toString();
+         }
+          return new Patient(f_name,l_name,adresse,phone_number,allergy,other,doc,createdby);
+    }
+    else return nullptr;
 }
 
 

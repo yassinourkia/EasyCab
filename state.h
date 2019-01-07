@@ -3,7 +3,10 @@
 #include <QString>
 #include <QSqlQuery>
 #include "utilisateur.h"
-
+/*!
+ * \brief The State class
+ * \authors MANAL BEKAOUI - OURKIA YASSIN
+ */
 class State
 {
 public:

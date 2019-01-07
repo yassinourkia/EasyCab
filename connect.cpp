@@ -3,7 +3,7 @@
 Connect::Connect()
 {
     this->db = QSqlDatabase::addDatabase("QSQLITE");
-    this->db.setDatabaseName("/Users/ourkia/Desktop/easycab/database.db");
+    this->db.setDatabaseName("/Users/ourkia/Desktop/easycab/database4.db");
 }
 bool Connect::isConnected()
 {

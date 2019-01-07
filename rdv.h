@@ -4,7 +4,10 @@
 #include "utilisateur.h"
 #include "patient.h"
 #include <QSqlQuery>
-
+/*!
+ * \brief The RDV class
+ * \authors MANAL BEKAOUI - OURKIA YASSIN
+ */
 class RDV
 {
 public:
@@ -25,9 +28,13 @@ public:
     QString getDescription() const;
     void setDescription(const QString &value);
 
+    QString getIDPatientbyRdvId(QString id);
     bool addRDV();
     bool deleteRDV(QString id);
     bool updateRDV(QString id);
+    RDV* getRdvById(QString id);
+
+
 
 private :
     QString date,doc;

@@ -3,13 +3,20 @@
         <file>Patient.png</file>
         <file>rdv.png</file>
         <file>state.png</file>
-        <file>easycab.png</file>
         <file>Home.png</file>
         <file>add.png</file>
         <file>delete.png</file>
         <file>update.png</file>
-    </qresource>
-    <qresource prefix="/database">
+        <file>easycab.png</file>
         <file>database.db</file>
+        <file>listpatient.png</file>
+        <file>suivi.png</file>
+        <file>logout.png</file>
+        <file>doctor.svg</file>
+        <file>secretaire.png</file>
+        <file>suivi.svg</file>
+        <file>rdv.svg</file>
+        <file>secretaire.svg</file>
+        <file>scrud.png</file>
     </qresource>
 </RCC>

@@ -9,19 +9,34 @@
 namespace Ui {
 class FormState;
 }
-
+/*!
+ * \brief The FormState class the Graphic interface of the forme to manage a State of a patient
+ * \authors MANAL BEKAOUI - OURKIA YASSIN
+ */
 class FormState : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit FormState(QWidget *parent = nullptr);
+    /*!
+     * \brief FormState constructor to instanciate the Form
+     * \param parent the graphic Container
+     */
+    explicit FormState(QWidget *parent = nullptr,QString doctor = nullptr);
+    /*!
+     * \brief FormState distructor to kill the variables
+     */
+     explicit FormState(QString rdv ,QString doctor);
     ~FormState();
 
 private slots:
+    /*!
+     * \brief on_add_clicked the slot to do when the button add is clicked
+     */
     void on_add_clicked();
-
-
+    /*!
+     * \brief on_dashboard_clicked the slot to do when the button of dashbord is clicked
+     */
     void on_dashboard_clicked();
 
 private:
@@ -30,6 +45,7 @@ private:
     Patient *patient;
     RDV* rdv;
     State* state;
+    QString doctor;
 
 };
 

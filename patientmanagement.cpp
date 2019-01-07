@@ -2,64 +2,38 @@
 #include "ui_patientmanagement.h"
 #include "connect.h"
 #include "patient.h"
-#include "formpatient.h"
 #include "secretaryinterface.h"
 #include <QFileDialog>
 #include <QMessageBox>
-PatientManagement::PatientManagement(QWidget *parent,QString add_by) :
+PatientManagement::PatientManagement(QWidget *parent,QString user) :
     QWidget(parent),
     ui(new Ui::PatientManagement)
 {
 
     ui->setupUi(this);
+    this->setWindowTitle("Gestionnaire de patient");
     this->setFixedSize(QSize(944,605));
-
+    this->user = user;
     QIcon icon (":/images/Home.png");
     QIcon add (":/images/add.png");
     QIcon del (":/images/delete.png");
     QIcon update (":/images/update.png");
 
-    QSize size (100,70);
+    QSize size (100,50);
 
-    ui->dashboard->setIconSize(size);
+    ui->dashboard->setIconSize(QSize(100,70));
     ui->dashboard->setIcon(icon);
+    ui->add->setIconSize(size);
     ui->add->setIcon(add);
+
+    ui->pushButton->setIconSize(size);
     ui->pushButton->setIcon(update);
+
+    ui->delete_2->setIconSize(size);
     ui->delete_2->setIcon(del);
 
-    ui->added_by->setText("Utilisateur :"+add_by);
-    cn = new Connect();
-    QSqlDatabase db = cn->getDb();
-    QSqlQueryModel * model = new QSqlQueryModel();
-    QSqlQuery* query = new QSqlQuery(db);
-    if(cn->isConnected())
-    {
-        qDebug() << "Arrived here";
-        if(cn->getDb().open())
-        {
-            if(query->exec("select * from patient")){
-                qDebug() <<"etat :" <<cn->getDb().isOpen();
-                model->setQuery(*query);
-                ui->list->setModel(model);
-
-            }
-            else
-            {
-                qDebug() <<"ça marche pas etat " <<cn->getDb().isOpen();
-            }
-        }
-        else
-        {
-            qDebug()<<"Not opened";
-        }
-
-        //qDebug() >> (model->rowCount());
-
-    }
-    else
-    {
-        qDebug() << "doesn't Arrived here";
-    }
+    ui->added_by->setText("Utilisateur :"+ user);
+    this->RechargeModel();
 }
 
 PatientManagement::~PatientManagement()
@@ -73,44 +47,43 @@ void PatientManagement::on_list_activated(const QModelIndex &index)
     QString val = ui->list->model()->data(index).toString();
     QSqlDatabase db = cn->getDb();
     QSqlQuery* query = new QSqlQuery(db);
-    if(cn->isConnected())
+    try
     {
-        qDebug() << "Arrived here";
-        if(cn->getDb().open())
+        if(cn->isConnected())
         {
-            if(query->exec("select * from patient where ID_PATIENT='"+val+"'")){
-                qDebug() <<"etat :" <<cn->getDb().isOpen();
-                while(query->next())
-                {
+            qDebug() << "Arrived here";
+            if(cn->getDb().open())
+            {
+                if(query->exec("select * from patient where ID_PATIENT='"+val+"'")){
+                    qDebug() <<"etat :" <<cn->getDb().isOpen();
+                    while(query->next())
+                    {
 
-                    ui->id_patient->setText(query->value(0).toString());
-                    ui->nom->setText(query->value(1).toString());
-                    ui->prenom->setText(query->value(2).toString());
-                    ui->addresse->setText(query->value(3).toString());
-                    ui->telephone->setText(query->value(4).toString());
-                    ui->allergies->setText(query->value(5).toString());
-                    ui->autres->setText(query->value(6).toString());
+                        ui->id_patient->setText(query->value(0).toString());
+                        ui->nom->setText(query->value(1).toString());
+                        ui->prenom->setText(query->value(2).toString());
+                        ui->addresse->setText(query->value(3).toString());
+                        ui->telephone->setText(query->value(4).toString());
+                        ui->allergies->setText(query->value(5).toString());
+                        ui->autres->setText(query->value(6).toString());
+                    }
                 }
-
+                else
+                {
+                    throw QString("Echec d'execution de la requête");
+                }
             }
             else
             {
-                qDebug() <<"ça marche pas etat " <<cn->getDb().isOpen();
+                throw QString("Echec d'ouverture de la base de donnée");
             }
         }
         else
-        {
-            qDebug()<<"Not opened";
-        }
-
-        //qDebug() >> (model->rowCount());
-
-    }
-    else
+           throw QString("Echec de connexion à la base de donnée");
+    } catch(QString const& chaine)
     {
-        qDebug() << "doesn't Arrived here";
+        qDebug() << "Exception déclenché :" + chaine ;
     }
-
 
 
 }
@@ -141,39 +114,7 @@ void PatientManagement::on_pushButton_clicked()
          if(patient.updatePatient(ui->id_patient->text()))
          {
             qDebug() << "Modification réussite ";
-            QSqlDatabase db = cn->getDb();
-            QSqlQueryModel * model = new QSqlQueryModel();
-            QSqlQuery* query = new QSqlQuery(db);
-            if(cn->isConnected())
-            {
-                qDebug() << "Arrived here";
-                if(cn->getDb().open())
-                {
-                    if(query->exec("select * from patient")){
-                        qDebug() <<"etat :" <<cn->getDb().isOpen();
-                        model->setQuery(*query);
-                        ui->list->setModel(model);
-
-                    }
-                    else
-                    {
-                        qDebug() <<"ça marche pas etat " <<cn->getDb().isOpen();
-                    }
-                }
-                else
-                {
-                    qDebug()<<"Not opened";
-                }
-
-                //qDebug() >> (model->rowCount());
-
-            }
-            else
-            {
-                qDebug() << "doesn't Arrived here";
-            }
-
-
+            this->RechargeModel();
          }
          else
          {
@@ -208,53 +149,14 @@ void PatientManagement::on_delete_2_clicked()
      else
      {
          QMessageBox::StandardButton reply;
-           reply = QMessageBox::question(this, "Test", "Quit?",
+           reply = QMessageBox::question(this, "Suppression", "Vous êtes sûr de supprimer ce patient ?",
                                          QMessageBox::Yes|QMessageBox::No);
            if (reply == QMessageBox::Yes) {
                if(patient.deletePatient(ui->id_patient->text()))
                {
                   qDebug() << ui->id_patient->text();
                   QMessageBox::critical(this,tr("Info"),tr("Suppression réussite"));
-                  QSqlDatabase db = cn->getDb();
-                  QSqlQueryModel * model = new QSqlQueryModel();
-                  QSqlQuery* query = new QSqlQuery(db);
-                  if(cn->isConnected())
-                  {
-
-                      if(cn->getDb().open())
-                      {
-                          if(query->exec("select * from patient")){
-                              qDebug() <<"etat :" <<cn->getDb().isOpen();
-                              model->setQuery(*query);
-                              ui->list->setModel(model);
-
-                              ui->nom->setText("");
-                               ui->prenom->setText("");
-                              ui->addresse->setText("");
-                               ui->telephone->setText("");
-                               ui->allergies->setText("");
-                             ui->autres->setText("");
-                               //fileName;
-
-                          }
-                          else
-                          {
-                              qDebug() <<"ça marche pas etat " <<cn->getDb().isOpen();
-                          }
-                      }
-                      else
-                      {
-                          qDebug()<<"Not opened";
-                      }
-
-
-
-                  }
-                  else
-                  {
-                      qDebug() << "doesn't Arrived here";
-                  }
-
+                  this->RechargeModel();
               }
            } else {
              qDebug() << "Suppression annulée";
@@ -283,6 +185,7 @@ void PatientManagement::on_toolButton_clicked()
             else
             {
                 QMessageBox::information(this, tr("Nom de fichier"),fileName);
+
             }
 
             QDataStream in(&file);
@@ -293,15 +196,85 @@ void PatientManagement::on_toolButton_clicked()
 
 void PatientManagement::on_add_clicked()
 {
-    FormPatient* form = new FormPatient() ;
-    form->show();
-    this->hide();
+    QString f_name,l_name,adresse,phone_number,allergy,other,doc;
+    Utilisateur createdby = Utilisateur("Manal","Bekaoui","Zaio","09090");
+
+    f_name = ui->nom->text();
+    l_name = ui->prenom->text();
+    adresse = ui->addresse->text();
+    phone_number = ui->telephone->text();
+    allergy = ui->allergies->text();
+    other = ui->autres->text();
+    doc =this->fileName;
+
+
+
+    Patient patient = Patient( f_name, l_name, adresse, phone_number,
+                               allergy, other, doc, createdby);
+
+
+     if(!cn->isConnected())
+     {
+
+         //return;
+     }
+     else {
+         if(patient.addPatient())
+         {
+
+            this->cn->~Connect();
+            this->RechargeModel();
+
+         }
+         else
+         {
+             qDebug() << "Echec d'ajout";
+             this->cn->~Connect();
+
+         }
+     }
 }
 
+void PatientManagement::RechargeModel()
+{
+    try
+    {
+        cn = new Connect();
+        QSqlDatabase db = cn->getDb();
+        QSqlQueryModel * model = new QSqlQueryModel();
+        QSqlQuery* query = new QSqlQuery(db);
+        if(cn->isConnected())
+        {
+
+            if(cn->getDb().open())
+            {
+                if(query->exec("select * from patient")){
+                    qDebug() <<"etat :" <<cn->getDb().isOpen();
+                    model->setQuery(*query);
+                    ui->list->setModel(model);
+                }
+                else
+                {
+                    throw QString("Echec d'execution de la requête");
+                }
+            }
+            else
+                throw QString("Echec d'ouverture de la base de donnée");
+        }
+        else
+        {
+            throw QString("Echec de connexion avec la base de donnée");
+        }
+    } catch(QString const& chaine)
+    {
+        qDebug() << "Exception déclenché :" + chaine ;
+    }
+
+}
 
 void PatientManagement::on_dashboard_clicked()
 {
-    SecretaryInterface *w = new SecretaryInterface("Manal");
+    SecretaryInterface *w = new SecretaryInterface(this->user);
     w->show();
     this->hide();
 }

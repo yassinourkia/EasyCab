@@ -78,6 +78,9 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border:0px;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -209,6 +212,9 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border:0px;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -248,6 +254,9 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border:0px;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -260,6 +269,9 @@
      <width>121</width>
      <height>81</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:0px;</string>
    </property>
    <property name="text">
     <string/>

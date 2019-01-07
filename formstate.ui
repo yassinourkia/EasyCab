@@ -106,6 +106,9 @@
    </property>
   </widget>
   <widget class="QLabel" name="patient">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>520</x>
@@ -139,6 +142,9 @@
      <width>81</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:0px;</string>
    </property>
    <property name="text">
     <string/>

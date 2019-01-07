@@ -12,13 +12,16 @@
 namespace Ui {
 class RdvForm;
 }
-
+/*!
+ * \brief The RdvForm class
+ * \authors MANAL BEKAOUI - OURKIA YASSIN
+ */
 class RdvForm : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit RdvForm(QWidget *parent = nullptr);
+    explicit RdvForm(QWidget *parent = nullptr,QString user=nullptr);
     ~RdvForm();
     Patient* getPatient(QString fname);
 
@@ -28,12 +31,15 @@ private slots:
 
     void on_add_clicked();
 
-    void on_date_clicked(const QDate &date);
+
+
+    void on_dashboard_clicked();
 
 private:
     Ui::RdvForm *ui;
     Connect *cn;
     QString fileName;
+    QString user;
 };
 
 #endif // RDVFORM_H
