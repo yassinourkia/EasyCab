@@ -2,7 +2,7 @@
 \label{class_r_d_v}\index{RDV@{RDV}}
 
 
-The \mbox{\hyperlink{class_r_d_v}{R\+DV}} class.  
+The \mbox{\hyperlink{class_r_d_v}{R\+DV}} class allows to add an appointment by a user.  
 
 
 
@@ -12,62 +12,303 @@ The \mbox{\hyperlink{class_r_d_v}{R\+DV}} class.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_r_d_v_adeb5f93f4c88e3d6e87043287f083d9f}\label{class_r_d_v_adeb5f93f4c88e3d6e87043287f083d9f}} 
-{\bfseries R\+DV} (Q\+String date, Q\+String patient, \mbox{\hyperlink{class_utilisateur}{Utilisateur}} createdby, Q\+String doc, Q\+String description)
-\item 
-\mbox{\Hypertarget{class_r_d_v_a9645f641f76ba6dde15c00704e637fc3}\label{class_r_d_v_a9645f641f76ba6dde15c00704e637fc3}} 
-Q\+String {\bfseries get\+Date} () const
-\item 
-\mbox{\Hypertarget{class_r_d_v_a33de832512fc2d6542ea961efadf3be4}\label{class_r_d_v_a33de832512fc2d6542ea961efadf3be4}} 
-void {\bfseries set\+Date} (const Q\+String \&value)
-\item 
-\mbox{\Hypertarget{class_r_d_v_aab057819a02d3257b3f419a569c5e968}\label{class_r_d_v_aab057819a02d3257b3f419a569c5e968}} 
-Q\+String {\bfseries get\+Doc} () const
-\item 
-\mbox{\Hypertarget{class_r_d_v_a3adc9de12843f5901de9dd1e08954de4}\label{class_r_d_v_a3adc9de12843f5901de9dd1e08954de4}} 
-void {\bfseries set\+Doc} (const Q\+String \&value)
-\item 
-\mbox{\Hypertarget{class_r_d_v_ad8bcbe648c260b33331ea444cb51b41f}\label{class_r_d_v_ad8bcbe648c260b33331ea444cb51b41f}} 
-Q\+String {\bfseries get\+Patient} () const
-\item 
-\mbox{\Hypertarget{class_r_d_v_a330240101b7580edad087123afbf96a1}\label{class_r_d_v_a330240101b7580edad087123afbf96a1}} 
-void {\bfseries set\+Patient} (Q\+String value)
-\item 
-\mbox{\Hypertarget{class_r_d_v_a1e3795af73f12576b94d6c75e65e4df6}\label{class_r_d_v_a1e3795af73f12576b94d6c75e65e4df6}} 
-\mbox{\hyperlink{class_utilisateur}{Utilisateur}} {\bfseries get\+Createdby} () const
-\item 
-\mbox{\Hypertarget{class_r_d_v_a7899f8ed714f31e6d8ffa8c998d21f4b}\label{class_r_d_v_a7899f8ed714f31e6d8ffa8c998d21f4b}} 
-void {\bfseries set\+Createdby} (const \mbox{\hyperlink{class_utilisateur}{Utilisateur}} \&value)
-\item 
-\mbox{\Hypertarget{class_r_d_v_aaa33b12beb34bc80e06a612e25ca604b}\label{class_r_d_v_aaa33b12beb34bc80e06a612e25ca604b}} 
-Q\+String {\bfseries get\+Description} () const
-\item 
-\mbox{\Hypertarget{class_r_d_v_a2fb6c269a4395db5525cf31199b301d9}\label{class_r_d_v_a2fb6c269a4395db5525cf31199b301d9}} 
-void {\bfseries set\+Description} (const Q\+String \&value)
-\item 
-\mbox{\Hypertarget{class_r_d_v_a3b764f633b3e46a8719313d40a177816}\label{class_r_d_v_a3b764f633b3e46a8719313d40a177816}} 
-Q\+String {\bfseries get\+I\+D\+Patientby\+Rdv\+Id} (Q\+String id)
-\item 
-\mbox{\Hypertarget{class_r_d_v_a3ab6ae9c0c5e3fcec6e7fcffdefc8173}\label{class_r_d_v_a3ab6ae9c0c5e3fcec6e7fcffdefc8173}} 
-bool {\bfseries add\+R\+DV} ()
-\item 
-\mbox{\Hypertarget{class_r_d_v_a6ea7f74dd40c1a362ce0d048337edba4}\label{class_r_d_v_a6ea7f74dd40c1a362ce0d048337edba4}} 
-bool {\bfseries delete\+R\+DV} (Q\+String id)
-\item 
-\mbox{\Hypertarget{class_r_d_v_a8cb9edc787a972719f3ad52873be4780}\label{class_r_d_v_a8cb9edc787a972719f3ad52873be4780}} 
-bool {\bfseries update\+R\+DV} (Q\+String id)
-\item 
-\mbox{\Hypertarget{class_r_d_v_a3f185b11330f86553df52e7a64fa8c6f}\label{class_r_d_v_a3f185b11330f86553df52e7a64fa8c6f}} 
-\mbox{\hyperlink{class_r_d_v}{R\+DV}} $\ast$ {\bfseries get\+Rdv\+By\+Id} (Q\+String id)
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_r_d_v_a23c36b9f8a7c2001775b39571bb32d70}\label{class_r_d_v_a23c36b9f8a7c2001775b39571bb32d70}} 
+\mbox{\hyperlink{class_r_d_v_a23c36b9f8a7c2001775b39571bb32d70}{R\+DV}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_r_d_v}{R\+DV}} default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_r_d_v_adeb5f93f4c88e3d6e87043287f083d9f}{R\+DV}} (Q\+String date, Q\+String patient, \mbox{\hyperlink{class_utilisateur}{Utilisateur}} createdby, Q\+String doc, Q\+String description)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_r_d_v}{R\+DV}} constructor with paramas. \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_r_d_v_a9645f641f76ba6dde15c00704e637fc3}{get\+Date}} () const
+\begin{DoxyCompactList}\small\item\em get\+Date get the date value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r_d_v_a33de832512fc2d6542ea961efadf3be4}{set\+Date}} (const Q\+String \&value)
+\begin{DoxyCompactList}\small\item\em set\+Date set the date value \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_r_d_v_aab057819a02d3257b3f419a569c5e968}{get\+Doc}} () const
+\begin{DoxyCompactList}\small\item\em get\+Doc get the doc value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r_d_v_a3adc9de12843f5901de9dd1e08954de4}{set\+Doc}} (const Q\+String \&value)
+\begin{DoxyCompactList}\small\item\em set\+Doc set the doc value \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_r_d_v_ad8bcbe648c260b33331ea444cb51b41f}{get\+Patient}} () const
+\begin{DoxyCompactList}\small\item\em get\+Patient get the patient value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r_d_v_a330240101b7580edad087123afbf96a1}{set\+Patient}} (Q\+String value)
+\begin{DoxyCompactList}\small\item\em set\+Patient set the patient value \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_utilisateur}{Utilisateur}} \mbox{\hyperlink{class_r_d_v_a1e3795af73f12576b94d6c75e65e4df6}{get\+Createdby}} () const
+\begin{DoxyCompactList}\small\item\em get\+Createdby get the createdby value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r_d_v_a7899f8ed714f31e6d8ffa8c998d21f4b}{set\+Createdby}} (const \mbox{\hyperlink{class_utilisateur}{Utilisateur}} \&value)
+\begin{DoxyCompactList}\small\item\em set\+Createdby set the createdby value \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_r_d_v_aaa33b12beb34bc80e06a612e25ca604b}{get\+Description}} () const
+\begin{DoxyCompactList}\small\item\em get\+Description get the descr value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r_d_v_a2fb6c269a4395db5525cf31199b301d9}{set\+Description}} (const Q\+String \&value)
+\begin{DoxyCompactList}\small\item\em set\+Description set the descr value \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_r_d_v_a3b764f633b3e46a8719313d40a177816}{get\+I\+D\+Patientby\+Rdv\+Id}} (Q\+String id)
+\begin{DoxyCompactList}\small\item\em get\+I\+D\+Patientby\+Rdv\+Id get an ID patient by using the \mbox{\hyperlink{class_r_d_v}{R\+DV}} id \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_r_d_v_a3ab6ae9c0c5e3fcec6e7fcffdefc8173}{add\+R\+DV}} ()
+\begin{DoxyCompactList}\small\item\em add\+R\+DV add the rdv to the database \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_r_d_v_a6ea7f74dd40c1a362ce0d048337edba4}{delete\+R\+DV}} (Q\+String id)
+\begin{DoxyCompactList}\small\item\em delete\+R\+DV delete a rdv from the database using its id \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_r_d_v_a8cb9edc787a972719f3ad52873be4780}{update\+R\+DV}} (Q\+String id)
+\begin{DoxyCompactList}\small\item\em update\+R\+DV update a rdv in database \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_r_d_v}{R\+DV}} $\ast$ \mbox{\hyperlink{class_r_d_v_a3f185b11330f86553df52e7a64fa8c6f}{get\+Rdv\+By\+Id}} (Q\+String id)
+\begin{DoxyCompactList}\small\item\em get\+Rdv\+By\+Id get a \mbox{\hyperlink{class_r_d_v}{R\+DV}} object by using its id \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-The \mbox{\hyperlink{class_r_d_v}{R\+DV}} class. 
+The \mbox{\hyperlink{class_r_d_v}{R\+DV}} class allows to add an appointment by a user. 
 
 \begin{DoxyAuthor}{Authors}
 M\+A\+N\+AL B\+E\+K\+A\+O\+UI -\/ O\+U\+R\+K\+IA Y\+A\+S\+S\+IN 
 \end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_r_d_v_adeb5f93f4c88e3d6e87043287f083d9f}\label{class_r_d_v_adeb5f93f4c88e3d6e87043287f083d9f}} 
+\index{RDV@{RDV}!RDV@{RDV}}
+\index{RDV@{RDV}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{RDV()}{RDV()}}
+{\footnotesize\ttfamily R\+D\+V\+::\+R\+DV (\begin{DoxyParamCaption}\item[{Q\+String}]{date,  }\item[{Q\+String}]{patient,  }\item[{\mbox{\hyperlink{class_utilisateur}{Utilisateur}}}]{createdby,  }\item[{Q\+String}]{doc,  }\item[{Q\+String}]{description }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_r_d_v}{R\+DV}} constructor with paramas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em patient} & \\
+\hline
+{\em createdby} & \\
+\hline
+{\em doc} & \\
+\hline
+{\em description} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_d_v_a3ab6ae9c0c5e3fcec6e7fcffdefc8173}\label{class_r_d_v_a3ab6ae9c0c5e3fcec6e7fcffdefc8173}} 
+\index{RDV@{RDV}!addRDV@{addRDV}}
+\index{addRDV@{addRDV}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{addRDV()}{addRDV()}}
+{\footnotesize\ttfamily bool R\+D\+V\+::add\+R\+DV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+add\+R\+DV add the rdv to the database 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_d_v_a6ea7f74dd40c1a362ce0d048337edba4}\label{class_r_d_v_a6ea7f74dd40c1a362ce0d048337edba4}} 
+\index{RDV@{RDV}!deleteRDV@{deleteRDV}}
+\index{deleteRDV@{deleteRDV}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{deleteRDV()}{deleteRDV()}}
+{\footnotesize\ttfamily bool R\+D\+V\+::delete\+R\+DV (\begin{DoxyParamCaption}\item[{Q\+String}]{id }\end{DoxyParamCaption})}
+
+
+
+delete\+R\+DV delete a rdv from the database using its id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & of the rdv \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_d_v_a1e3795af73f12576b94d6c75e65e4df6}\label{class_r_d_v_a1e3795af73f12576b94d6c75e65e4df6}} 
+\index{RDV@{RDV}!getCreatedby@{getCreatedby}}
+\index{getCreatedby@{getCreatedby}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{getCreatedby()}{getCreatedby()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_utilisateur}{Utilisateur}} R\+D\+V\+::get\+Createdby (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Createdby get the createdby value 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_d_v_a9645f641f76ba6dde15c00704e637fc3}\label{class_r_d_v_a9645f641f76ba6dde15c00704e637fc3}} 
+\index{RDV@{RDV}!getDate@{getDate}}
+\index{getDate@{getDate}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily Q\+String R\+D\+V\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Date get the date value 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_d_v_aaa33b12beb34bc80e06a612e25ca604b}\label{class_r_d_v_aaa33b12beb34bc80e06a612e25ca604b}} 
+\index{RDV@{RDV}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily Q\+String R\+D\+V\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Description get the descr value 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_d_v_aab057819a02d3257b3f419a569c5e968}\label{class_r_d_v_aab057819a02d3257b3f419a569c5e968}} 
+\index{RDV@{RDV}!getDoc@{getDoc}}
+\index{getDoc@{getDoc}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{getDoc()}{getDoc()}}
+{\footnotesize\ttfamily Q\+String R\+D\+V\+::get\+Doc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Doc get the doc value 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_d_v_a3b764f633b3e46a8719313d40a177816}\label{class_r_d_v_a3b764f633b3e46a8719313d40a177816}} 
+\index{RDV@{RDV}!getIDPatientbyRdvId@{getIDPatientbyRdvId}}
+\index{getIDPatientbyRdvId@{getIDPatientbyRdvId}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{getIDPatientbyRdvId()}{getIDPatientbyRdvId()}}
+{\footnotesize\ttfamily Q\+String R\+D\+V\+::get\+I\+D\+Patientby\+Rdv\+Id (\begin{DoxyParamCaption}\item[{Q\+String}]{id }\end{DoxyParamCaption})}
+
+
+
+get\+I\+D\+Patientby\+Rdv\+Id get an ID patient by using the \mbox{\hyperlink{class_r_d_v}{R\+DV}} id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the rdv id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the patient id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_d_v_ad8bcbe648c260b33331ea444cb51b41f}\label{class_r_d_v_ad8bcbe648c260b33331ea444cb51b41f}} 
+\index{RDV@{RDV}!getPatient@{getPatient}}
+\index{getPatient@{getPatient}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{getPatient()}{getPatient()}}
+{\footnotesize\ttfamily Q\+String R\+D\+V\+::get\+Patient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Patient get the patient value 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_d_v_a3f185b11330f86553df52e7a64fa8c6f}\label{class_r_d_v_a3f185b11330f86553df52e7a64fa8c6f}} 
+\index{RDV@{RDV}!getRdvById@{getRdvById}}
+\index{getRdvById@{getRdvById}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{getRdvById()}{getRdvById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_d_v}{R\+DV}} $\ast$ R\+D\+V\+::get\+Rdv\+By\+Id (\begin{DoxyParamCaption}\item[{Q\+String}]{id }\end{DoxyParamCaption})}
+
+
+
+get\+Rdv\+By\+Id get a \mbox{\hyperlink{class_r_d_v}{R\+DV}} object by using its id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & of the rdv \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_r_d_v_a7899f8ed714f31e6d8ffa8c998d21f4b}\label{class_r_d_v_a7899f8ed714f31e6d8ffa8c998d21f4b}} 
+\index{RDV@{RDV}!setCreatedby@{setCreatedby}}
+\index{setCreatedby@{setCreatedby}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{setCreatedby()}{setCreatedby()}}
+{\footnotesize\ttfamily void R\+D\+V\+::set\+Createdby (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_utilisateur}{Utilisateur}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Createdby set the createdby value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_d_v_a33de832512fc2d6542ea961efadf3be4}\label{class_r_d_v_a33de832512fc2d6542ea961efadf3be4}} 
+\index{RDV@{RDV}!setDate@{setDate}}
+\index{setDate@{setDate}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{setDate()}{setDate()}}
+{\footnotesize\ttfamily void R\+D\+V\+::set\+Date (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Date set the date value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_d_v_a2fb6c269a4395db5525cf31199b301d9}\label{class_r_d_v_a2fb6c269a4395db5525cf31199b301d9}} 
+\index{RDV@{RDV}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily void R\+D\+V\+::set\+Description (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Description set the descr value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_d_v_a3adc9de12843f5901de9dd1e08954de4}\label{class_r_d_v_a3adc9de12843f5901de9dd1e08954de4}} 
+\index{RDV@{RDV}!setDoc@{setDoc}}
+\index{setDoc@{setDoc}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{setDoc()}{setDoc()}}
+{\footnotesize\ttfamily void R\+D\+V\+::set\+Doc (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Doc set the doc value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_d_v_a330240101b7580edad087123afbf96a1}\label{class_r_d_v_a330240101b7580edad087123afbf96a1}} 
+\index{RDV@{RDV}!setPatient@{setPatient}}
+\index{setPatient@{setPatient}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{setPatient()}{setPatient()}}
+{\footnotesize\ttfamily void R\+D\+V\+::set\+Patient (\begin{DoxyParamCaption}\item[{Q\+String}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Patient set the patient value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_r_d_v_a8cb9edc787a972719f3ad52873be4780}\label{class_r_d_v_a8cb9edc787a972719f3ad52873be4780}} 
+\index{RDV@{RDV}!updateRDV@{updateRDV}}
+\index{updateRDV@{updateRDV}!RDV@{RDV}}
+\subsubsection{\texorpdfstring{updateRDV()}{updateRDV()}}
+{\footnotesize\ttfamily bool R\+D\+V\+::update\+R\+DV (\begin{DoxyParamCaption}\item[{Q\+String}]{id }\end{DoxyParamCaption})}
+
+
+
+update\+R\+DV update a rdv in database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & of the rdv \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

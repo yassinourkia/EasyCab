@@ -17,6 +17,11 @@ RdvForm::RdvForm(QWidget *parent,QString user) :
     ui->dashboard->setIcon(icon);
     ui->label->setText(user);
     this->setWindowTitle("Rendez-vous");
+
+    QIcon rdvs (":/images/state.png");
+
+    ui->listrdv->setIconSize(size);
+    ui->listrdv->setIcon(rdvs);
     cn = new Connect();
     QSqlDatabase db = cn->getDb();
     QSqlQueryModel * model = new QSqlQueryModel();
@@ -68,7 +73,7 @@ void RdvForm::on_charge_clicked()
            QFile file(fileName);
 
             if (!file.open(QIODevice::ReadOnly)) {
-                QMessageBox::information(this, tr("Echec d'ouverture de fichier"),
+                QMessageBox::critical(this, tr("Echec d'ouverture de fichier"),
                     file.errorString());
                 return ;
             }
@@ -131,7 +136,7 @@ void RdvForm::on_add_clicked()
      else {
          if(rdv.addRDV())
          {
-            QMessageBox::critical(this,"Information","Vous avez bien ajouté le rendez-vous pour la date de <strong>"+date+"</strong>");
+            QMessageBox::information(this,"Information","Vous avez bien ajouté le rendez-vous pour la date de <strong>"+date+"</strong>");
 
             ListRdvSec *w = new ListRdvSec(nullptr,this->user);
             w->show();
@@ -147,6 +152,13 @@ void RdvForm::on_add_clicked()
 void RdvForm::on_dashboard_clicked()
 {
     SecretaryInterface *w = new SecretaryInterface(this->user);
+    w->show();
+    this->hide();
+}
+
+void RdvForm::on_listrdv_clicked()
+{
+    ListRdvSec *w = new ListRdvSec(nullptr,this->user);
     w->show();
     this->hide();
 }

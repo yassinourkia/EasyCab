@@ -8,16 +8,26 @@
 namespace Ui {
 class LoginDoctor;
 }
-
+/*!
+ * \brief The LoginDoctor class the login form for doctors
+ * \authors MANAL BEKAOUI - OURKIA YASSIN
+ */
 class LoginDoctor : public QWidget
 {
     Q_OBJECT
 
 public:
+    /*!
+     * \brief LoginDoctor constructor to instanciate the graphic and STL
+     * \param parent
+     */
     explicit LoginDoctor(QWidget *parent = nullptr);
     ~LoginDoctor();
 
 private slots:
+    /*!
+     * \brief on_pushButton_clicked to connect to the dashboard
+     */
     void on_pushButton_clicked();
 
 private:

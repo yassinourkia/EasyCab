@@ -7,6 +7,7 @@
 #include <QPrinter>
 #include <QPdfWriter>
 #include <QPainter>
+#include <QFileDialog>
 FormState::FormState(QWidget *parent,QString doctor) :
     QWidget(parent),
     ui(new Ui::FormState)
@@ -14,6 +15,7 @@ FormState::FormState(QWidget *parent,QString doctor) :
     ui->setupUi(this);
     this->setFixedSize(QSize(700,467));
     this->doctor = doctor;
+    this->setWindowTitle("Formulaire de Prescription");
     cn = new Connect();
     QIcon icon (":/images/Home.png");
     QSize size (71,51);
@@ -25,8 +27,9 @@ FormState::FormState(QString rdv, QString doctor) :
     ui(new Ui::FormState)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(700,467));
+    this->setFixedSize(QSize(700,614));
     this->doctor = doctor;
+    this->setWindowTitle("Formulaire de Prescription");
     cn = new Connect();
     QIcon icon (":/images/Home.png");
     QSize size (71,51);
@@ -52,16 +55,30 @@ void FormState::on_add_clicked()
 {
     QString comments;
     QString PHARMACEUTICALS;
-    QString date,FIANL;
+    QString FIANL;
     QString patient,rdv;
 
     comments = ui->comments->toPlainText();
     PHARMACEUTICALS = ui->PHARMACEUTICALS->toPlainText();
-    date = ui->date->dateTime().toString("yyyy-MM-dd");
+    //date = ui->date->dateTime().toString("yyyy-MM-dd");
     patient = ui->patient->text();
     rdv = ui->rdv->text();
 
+    QString date,patient_name,doc,description;
 
+    date = ui->date->selectedDate().toString("yyyy-MM-dd");
+    //patient_name = ui->NomPatient->property("currentText").toString();
+    Patient p;
+    Patient *pp = p.getPatientById(patient);
+    patient_name = pp->getf_name() ;
+    Utilisateur createdby = Utilisateur("Manal","Bekaoui","Zaio","09090");
+    description = ui->comments->toPlainText();
+    doc = fileName;
+
+    //Patient *patient = this->getPatient(patient_name);
+    ui->label->setText(date);
+
+    RDV r = RDV(date,patient_name,createdby,description,doc);
     State state = State(comments,PHARMACEUTICALS,date,"0",rdv,patient);
     try
     {
@@ -71,10 +88,10 @@ void FormState::on_add_clicked()
          }
          else
          {
-             if(state.addState())
+             if(state.addState() && r.addRDV())
              {
-
-               QMessageBox::critical(this,tr("Info"),tr("Status bien ajouté "));
+               QString msg = "Status bien ajouté et Vous avez bien ajouté le rendez-vous pour la date de <strong>"+date;
+               QMessageBox::information(this,tr("Info"),msg);
                QString currentdate = QDate::currentDate().toString("dd/MM/yyyy");
                QString html =
                "<div align=right>"
@@ -116,7 +133,10 @@ void FormState::on_add_clicked()
     {
         qDebug() << "Exception déclenché :" + erreur;
     }
+
 }
+
+
 
 
 void FormState::on_dashboard_clicked()
@@ -125,4 +145,32 @@ void FormState::on_dashboard_clicked()
     DoctorDashboard *w = new DoctorDashboard(this->doctor);
     w->show();
     this->hide();
+}
+
+
+void FormState::on_charge_clicked()
+{
+    fileName = QFileDialog::getOpenFileName(this,
+           tr("Charger un document"), "",
+           tr("PDF (*.pdf);;Image (*.jpg,png,bmp);;Tous les fichiers (*)"));
+        if (fileName.isEmpty())
+            return ;
+        else
+        {
+           QFile file(fileName);
+
+            if (!file.open(QIODevice::ReadOnly)) {
+                QMessageBox::critical(this, tr("Echec d'ouverture de fichier"),
+                    file.errorString());
+                return ;
+            }
+            else
+            {
+                QMessageBox::information(this, tr("Nom de fichier"),fileName);
+            }
+
+            QDataStream in(&file);
+            in.setVersion(QDataStream::Qt_4_5);
+
+        }
 }

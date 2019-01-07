@@ -2,7 +2,7 @@
 \label{class_rdv_form}\index{RdvForm@{RdvForm}}
 
 
-The \mbox{\hyperlink{class_rdv_form}{Rdv\+Form}} class.  
+The \mbox{\hyperlink{class_rdv_form}{Rdv\+Form}} class gui to add an appointment.  
 
 
 
@@ -18,20 +18,59 @@ Inheritance diagram for Rdv\+Form\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_rdv_form_a26f5f247bfffe65ca85e2f2e8d769c8a}\label{class_rdv_form_a26f5f247bfffe65ca85e2f2e8d769c8a}} 
-{\bfseries Rdv\+Form} (Q\+Widget $\ast$parent=nullptr, Q\+String user=nullptr)
-\item 
-\mbox{\Hypertarget{class_rdv_form_aee1f52f10a74e3c307e28d838408afda}\label{class_rdv_form_aee1f52f10a74e3c307e28d838408afda}} 
-\mbox{\hyperlink{class_patient}{Patient}} $\ast$ {\bfseries get\+Patient} (Q\+String fname)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_rdv_form_a26f5f247bfffe65ca85e2f2e8d769c8a}{Rdv\+Form}} (Q\+Widget $\ast$parent=nullptr, Q\+String user=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_rdv_form}{Rdv\+Form}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_patient}{Patient}} $\ast$ \mbox{\hyperlink{class_rdv_form_aee1f52f10a74e3c307e28d838408afda}{get\+Patient}} (Q\+String fname)
+\begin{DoxyCompactList}\small\item\em get\+Patient get a patient object by his name \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-The \mbox{\hyperlink{class_rdv_form}{Rdv\+Form}} class. 
+The \mbox{\hyperlink{class_rdv_form}{Rdv\+Form}} class gui to add an appointment. 
 
 \begin{DoxyAuthor}{Authors}
 M\+A\+N\+AL B\+E\+K\+A\+O\+UI -\/ O\+U\+R\+K\+IA Y\+A\+S\+S\+IN 
 \end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_rdv_form_a26f5f247bfffe65ca85e2f2e8d769c8a}\label{class_rdv_form_a26f5f247bfffe65ca85e2f2e8d769c8a}} 
+\index{RdvForm@{RdvForm}!RdvForm@{RdvForm}}
+\index{RdvForm@{RdvForm}!RdvForm@{RdvForm}}
+\subsubsection{\texorpdfstring{RdvForm()}{RdvForm()}}
+{\footnotesize\ttfamily Rdv\+Form\+::\+Rdv\+Form (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr},  }\item[{Q\+String}]{user = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_rdv_form}{Rdv\+Form}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & graphic container \\
+\hline
+{\em user} & the current user of the app \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rdv_form_aee1f52f10a74e3c307e28d838408afda}\label{class_rdv_form_aee1f52f10a74e3c307e28d838408afda}} 
+\index{RdvForm@{RdvForm}!getPatient@{getPatient}}
+\index{getPatient@{getPatient}!RdvForm@{RdvForm}}
+\subsubsection{\texorpdfstring{getPatient()}{getPatient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_patient}{Patient}} $\ast$ Rdv\+Form\+::get\+Patient (\begin{DoxyParamCaption}\item[{Q\+String}]{fname }\end{DoxyParamCaption})}
+
+
+
+get\+Patient get a patient object by his name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & first name of the patient \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+patient object 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

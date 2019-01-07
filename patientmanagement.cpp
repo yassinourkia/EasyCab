@@ -155,7 +155,7 @@ void PatientManagement::on_delete_2_clicked()
                if(patient.deletePatient(ui->id_patient->text()))
                {
                   qDebug() << ui->id_patient->text();
-                  QMessageBox::critical(this,tr("Info"),tr("Suppression réussite"));
+                  QMessageBox::information(this,tr("Info"),tr("Suppression réussite"));
                   this->RechargeModel();
               }
            } else {
@@ -178,7 +178,7 @@ void PatientManagement::on_toolButton_clicked()
            QFile file(fileName);
 
             if (!file.open(QIODevice::ReadOnly)) {
-                QMessageBox::information(this, tr("Echec d'ouverture de fichier"),
+                QMessageBox::critical(this, tr("Echec d'ouverture de fichier"),
                     file.errorString());
                 return ;
             }

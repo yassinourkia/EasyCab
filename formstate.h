@@ -39,6 +39,8 @@ private slots:
      */
     void on_dashboard_clicked();
 
+    void on_charge_clicked();
+
 private:
     Ui::FormState *ui;
     Connect *cn;
@@ -46,6 +48,7 @@ private:
     RDV* rdv;
     State* state;
     QString doctor;
+    QString fileName;
 
 };
 

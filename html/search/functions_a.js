@@ -1,6 +1,26 @@
 var searchData=
 [
-  ['_7econnect',['~Connect',['../class_connect.html#afb94d6b498a514a024a5b3d7700c91a8',1,'Connect']]],
-  ['_7elistrdv',['~listrdv',['../classlistrdv.html#a18fe2f46c6b8a0dcbfbd697cc4d135f6',1,'listrdv']]],
-  ['_7elogin',['~LOGIN',['../class_l_o_g_i_n.html#a0d2bff82e2c35eca7566d8ebd180e70f',1,'LOGIN']]]
+  ['secretaire',['Secretaire',['../class_secretaire.html#a332fd6a3866c3ac0f08b6b9a8b75516b',1,'Secretaire::Secretaire()'],['../class_secretaire.html#ae399f6f7212bbe9ba514a3a827aa95d9',1,'Secretaire::Secretaire(QString f_name, QString l_name, QString adresse, QString phone_number, QString pseudo, QString password)'],['../class_secretaire.html#a9df2696b2b6708755e7c4bee1be0d67a',1,'Secretaire::Secretaire(QString psuedo, QString password)']]],
+  ['secretaryinterface',['SecretaryInterface',['../class_secretary_interface.html#a821c94f865a2dc52e3c1e395202009b3',1,'SecretaryInterface::SecretaryInterface(QWidget *parent=nullptr)'],['../class_secretary_interface.html#a9b2090ba8b53b60df97e0897400044cb',1,'SecretaryInterface::SecretaryInterface(QString user)']]],
+  ['selectstate',['selectState',['../class_state.html#aa5ebecfef389f53f99341ccb5df8de35',1,'State']]],
+  ['setadresse',['setadresse',['../class_utilisateur.html#a7047623a06539a397d1457d312985ba7',1,'Utilisateur']]],
+  ['setallergy',['setAllergy',['../class_patient.html#a61743a052c51abe19ae75f5945fa98b1',1,'Patient']]],
+  ['setcomments',['setComments',['../class_state.html#ac23a5b33d51e2e2798ab5ec94f54d379',1,'State']]],
+  ['setcreatedby',['setCreatedby',['../class_patient.html#ac61823b7a151a384d9b4c06a11013076',1,'Patient::setCreatedby()'],['../class_r_d_v.html#a7899f8ed714f31e6d8ffa8c998d21f4b',1,'RDV::setCreatedby()']]],
+  ['setdate',['setDate',['../class_r_d_v.html#a33de832512fc2d6542ea961efadf3be4',1,'RDV']]],
+  ['setdescription',['setDescription',['../class_r_d_v.html#a2fb6c269a4395db5525cf31199b301d9',1,'RDV']]],
+  ['setdoc',['setDoc',['../class_patient.html#a4682d8a78adadf1edf65dd12b0ca268c',1,'Patient::setDoc()'],['../class_r_d_v.html#a3adc9de12843f5901de9dd1e08954de4',1,'RDV::setDoc()']]],
+  ['setf_5fname',['setf_name',['../class_utilisateur.html#a79e3806e0aa6f5d263d03870621d3e59',1,'Utilisateur']]],
+  ['setfianl',['setFIANL',['../class_state.html#a335a98030204aa203a3bbe69cf3d8ed6',1,'State']]],
+  ['setl_5fname',['setl_name',['../class_utilisateur.html#ac3d130b027779c9aaaf55fab9a62ace6',1,'Utilisateur']]],
+  ['setother',['setOther',['../class_patient.html#a0ece648106c80c8df117804f24422676',1,'Patient']]],
+  ['setpatient',['setPatient',['../class_r_d_v.html#a330240101b7580edad087123afbf96a1',1,'RDV::setPatient()'],['../class_state.html#a47652011d60fd6cc7ff03f8623b37773',1,'State::setPatient()']]],
+  ['setpharmaceuticals',['setPHARMACEUTICALS',['../class_state.html#aa494c330e398a6477699b7a3890a6d4f',1,'State']]],
+  ['setphone_5fnumber',['setphone_number',['../class_utilisateur.html#aec930972cb1ee96c8352a80d1cff78e7',1,'Utilisateur']]],
+  ['setpsuedo',['setPsuedo',['../class_medecin.html#a2578faa446f961f05dc8578d1cf706d9',1,'Medecin::setPsuedo()'],['../class_secretaire.html#aa43fc10abbaa9741fd4c98fcdd6e0ae6',1,'Secretaire::setPsuedo()']]],
+  ['setrdv',['setRdv',['../class_state.html#a20029d32d294b2dcda3569ce5e512433',1,'State']]],
+  ['setrole',['setRole',['../class_medecin.html#ae98a1e8b43f23aeaf151e300e568c43f',1,'Medecin']]],
+  ['setuser',['setUser',['../classlistrdv.html#aab827307c6c63d5a6c1d5e8cbfbb0d72',1,'listrdv']]],
+  ['state',['State',['../class_state.html#a8ded2cb128d0c4d3dde1fedb066e964a',1,'State::State(QString comments, QString PHARMACEUTICALS, QString date, QString FINAL, QString patient, QString rdv)'],['../class_state.html#ab91bb1dd5aa6260ab2a456581daf9ec2',1,'State::State()']]],
+  ['staterdv',['StateRdv',['../class_state_rdv.html#a8ef7b475b753882741f521c8c53178f7',1,'StateRdv::StateRdv(QWidget *parent=nullptr)'],['../class_state_rdv.html#a65ba69e9e9d0a57a4f26bba8fa750aa1',1,'StateRdv::StateRdv(QString id, QString user=nullptr)']]]
 ];
